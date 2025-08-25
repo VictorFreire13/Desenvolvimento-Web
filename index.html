@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 01</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>cadastro</h1>
+        <form  >
+            <label for="nome">Nome:</label>
+            <input type="text" placeholder="Digite seu nome" id="nome" name="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Digite seu email" id="email" name="email" required>
+            <label for="senha">Senha:
+
+            </label>
+            <input type="password" placeholder="Digite sua senha" id="senha" name="senha" required>
+             <input type="checkbox" id="mostrarSenha" onclick="toggleSenha()">
+    <label for="mostrarSenha"></label>
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" id="mensagem"  rows="4"></textarea>
+            <button type="submit" class="item1">Enviar</button>
+            <button type="reset" class="item2">Limpar</button>
+
+        </form>
+    </div>
+    <script>
+    function toggleSenha() {
+        const senha = document.getElementById("senha");
+        if (senha.type === "password") {
+            senha.type = "text";  // mostra a senha
+        } else {
+            senha.type = "password";  // esconde novamente
+        }
+    }
+</script>
+    
+    
+</body>
+</html>
