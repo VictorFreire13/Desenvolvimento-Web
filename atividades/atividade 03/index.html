@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário com Canvas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    canvas {
+      border: 1px solid #000;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Formulário de Satisfação</h2>
+  <form id="meuFormulario">
+    <label>
+      Nome:
+      <input type="text" name="nome" required>
+    </label>
+    <label>
+      E-mail:
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Data de Nascimento:
+      <input type="date" name="nascimento" required>
+    </label>
+    <label>
+      Telefone:
+      <input type="tel" name="telefone" placeholder="(99) 99999-9999" required>
+    </label>
+    <label>
+      Nível de satisfação:
+      <input type="range" id="satisfacao" name="satisfacao" min="0" max="100" value="50">
+    </label>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <canvas id="grafico" width="400" height="100"></canvas>
+
+  <script>
+    const form = document.getElementById("meuFormulario");
+    const canvas = document.getElementById("grafico");
+    const ctx = canvas.getContext("2d");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      
+    
+      const satisfacao = document.getElementById("satisfacao").value;
+
+      
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      
+      ctx.fillStyle = "blue";
+      ctx.fillRect(10, 30, satisfacao * 3.5, 40);  
+
+
+      ctx.fillStyle = "black";
+      ctx.font = "16px Arial";
+      ctx.fillText("Nível de satisfação: " + satisfacao, 10, 20);
+    });
+  </script>
+
+</body>
+</html>

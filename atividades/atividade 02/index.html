@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>atividade 02</title>
+</head>
+<body>
+    <main>
+        <h1>Atividade</h1>
+        <h2>Video</h2>
+        <video controls>
+            <source src="13899360-sd_960_540_30fps.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <h2>audio</h2>
+            <div>
+                <audio controls>
+                    <source src="rick.mp3.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+        
+                </audio>
+            </div>
+        
+        <h2>Geolocalização</h2>
+          <button onclick="mostrarLocalizacao()">Mostrar minha localização</button>
+          <p id="saida"></p>
+        
+          <script>
+        function mostrarLocalizacao() {
+        
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(posicao) {
+              document.getElementById("saida").innerHTML =
+                "Latitude: " + posicao.coords.latitude + "<br>" +
+                "Longitude: " + posicao.coords.longitude;
+            }, function() {
+              document.getElementById("saida").innerText = "Não foi possível obter a localização.";
+            });
+          } else {
+            document.getElementById("saida").innerText = "Geolocalização não é suportada por este navegador.";}
+          }
+          </script>
+    </main>
+</body>
+</html>
