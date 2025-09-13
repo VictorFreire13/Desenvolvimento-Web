@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <div id="conteudo">
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo accusantium, vitae doloribus quasi possimus iusto omnis harum quo totam, dolorum similique sint, eos delectus debitis distinctio ullam animi modi perferendis.</p>
+ </div>  
+ <button onclick="removerElemento()">remover</button> 
+
+ <script>
+    function removerElemento(){
+    const conteudo = document.getElementById("conteudo");
+    conteudo.remove();
+
+    }
+ </script>
+</body>
+</html>
